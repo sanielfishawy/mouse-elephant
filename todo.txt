@@ -1,0 +1,2 @@
+- Create a sender and receiver socket.
+- Determine maximum rate I am able to send between them. 

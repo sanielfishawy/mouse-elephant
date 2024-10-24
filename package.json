@@ -1,0 +1,13 @@
+{
+  "name": "MouseElephantTest",
+  "version": "1.0.0",
+  "description": "Given a 10Gbps node that has several incoming sockets attempting to recieve data at the full line rate and one socket that is attempting recieve data at a very low rate what is the retransmit rate for the low rate socket?",
+  "main": "index.js",
+  "author": "Sani Elfishawy",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-ec2": "^3.677.0",
+    "@aws-sdk/credential-provider-ini": "^3.677.0"
+  }
+}

@@ -1,0 +1,18 @@
+State       Recv-Q Send-Q       Local Address:Port          Peer Address:Port
+ESTAB       0      0            192.168.1.10:56824          93.184.216.34:http    timer:(keepalive,53sec,0) ino:177777 sk:10 <>
+    cubic wscale:7,7 rto:204ms rtt:20.5/10.25ms ato:40mss:1460 pmtu:1500 rcvmss:1460 advmss:1460 cwnd:10 send 45.6Mbps retrans:1/200
+ESTAB       0      0            192.168.1.10:56825          93.184.216.35:https    timer:(keepalive,55sec,0) ino:177778 sk:11 <>
+    cubic wscale:9,7 rto:201ms rtt:22.5/11.25ms ato:40mss:1460 pmtu:1500 rcvmss:1460 advmss:1460 cwnd:15 send 50.8Mbps retrans:0/150
+
+
+
+State       Recv-Q Send-Q       Local Address:Port          Peer Address:Port
+ESTAB       0      0            192.168.1.10:56824          93.184.216.34:http    timer:(keepalive,53sec,0) ino:177777 sk:10 <>
+    cubic wscale:7,7 rto:204ms rtt:20.5/10.25ms ato:40mss:1460 pmtu:1500 rcvmss:1460 advmss:1460 cwnd:10 send 45.6Mbps retrans:1/200
+ESTAB       0      0            192.168.1.10:56825          93.184.216.35:https    timer:(keepalive,55sec,0) ino:177778 sk:11 <>
+    cubic wscale:9,7 rto:201ms rtt:22.5/11.25ms ato:40mss:1460 pmtu:1500 rcvmss:1460 advmss:1460 cwnd:15 send 50.8Mbps retrans:0/150
+
+
+When I described my misgivings to you about the purported benefit of PR you expressed some discomfort regarding the prospect of broaching that subject with Balaji should experiments show Clockwork's PR assumptions to be false. You wondered out loud how you might delicately handle communicating that information and what the next steps would be.
+
+I will note that at this point this position has been delegated to me, before I have had a chance to complete my experiments. As you well know I am not at all shy so this is not a problem for me. I mention it so you have a sense of the current situation between Balaji and myself. 
