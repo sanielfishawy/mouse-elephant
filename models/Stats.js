@@ -28,6 +28,10 @@ export default class Stats{
         return this.numRequests
     }
 
+    static get sum(){
+        return this.sum
+    }
+
     static get avg(){
         return this.sum / this.numRequests
     }
