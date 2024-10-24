@@ -5,10 +5,13 @@ export default class Stats{
     static g_5 = 0
     static min = 100000
     static max = 0
+    static sum = 0
 
 
     static recordDelay(delay){
         this.numRequests++
+
+        sum += delay
 
         if (delay < this.min) this.min = delay
         if (delay > this.max) this.max = delay
@@ -25,10 +28,15 @@ export default class Stats{
         return this.numRequests
     }
 
+    statig get avg(){
+        return this.sum / this.numRequests
+    }
+
     static get stats(){
         return {
             min: this.min,
             max: this.max,
+            avg: this.avg,
             l_2: this.l_2,
             b_2_5: this.b_2_5,
             g_5: this.g_5
