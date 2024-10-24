@@ -29,7 +29,7 @@ export default class Stats{
     static printNumRequests(){
         process.stdout.clearLine()
         process.stdout.cursorTo(0)
-        process.stdout.write(this.numRequests)
+        process.stdout.write(this.numRequests.toString())
     }
 
     static get numRequests(){
