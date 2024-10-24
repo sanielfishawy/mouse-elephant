@@ -26,7 +26,7 @@ export default class Stats{
             this.g_5++
     }
 
-    printNumRequests(){
+    static printNumRequests(){
         process.stdout.clearLine()
         process.stdout.cursorTo(0)
         process.stdout.write(this.numRequests)
