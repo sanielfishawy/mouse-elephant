@@ -94,7 +94,7 @@ export default class Client{
             numRequests: Stats.numRequests,
             totalSeconds,
             requestsPerSecond: Stats.numRequests / totalSeconds,
-            ...Stats.getStats(),
+            ...Stats.stats,
         })
     }
 
