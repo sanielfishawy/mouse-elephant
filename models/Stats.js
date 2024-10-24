@@ -60,7 +60,10 @@ export default class Stats{
             avg: this.avg,
             l_2: this.l_2,
             b_2_5: this.b_2_5,
-            g_5: this.g_5
+            b_5_10: this.b_5_10,
+            b_10_200: this.b_10_200,
+            b_200_250: this.b_200_250,
+            g_250: this.g_250,
         }
     }
 
