@@ -11,7 +11,7 @@ export default class Stats{
     static recordDelay(delay){
         this.numRequests++
 
-        if (this.numRequests % 1000 === 0) console.log(this.numRequests)
+        if (this.numRequests % 1000 === 0) this.printNumRequests()
 
         this.sum += delay
 
@@ -24,6 +24,12 @@ export default class Stats{
             this.b_2_5++
         else
             this.g_5++
+    }
+
+    printNumRequests(){
+        process.stdout.clearLine()
+        process.stdout.cursorTo(0)
+        process.stdout.write(this.numRequests)
     }
 
     static get numRequests(){
