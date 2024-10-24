@@ -4,15 +4,18 @@ import Stats from './Stats.js'
 
 export default class Client{
 
-    constructor({host, port, size: sizeName, gapUs}){
+    constructor({host, port, size: sizeName, gapUs, numRequests}){
         this._host = host
         this._port = port
         this._sizeName = sizeName
         this._gapUs = gapUs
+        this._numRequests = numRequests
+
         this._socket = null
         this._received = 0
         this._reqStartTime = null
         this._reqEndTime = null
+        this._totalStartTime = null
         Stats.resetStats()
         this._setupClient()
     }
@@ -37,6 +40,10 @@ export default class Client{
         return this._gapUs
     }
 
+    get numRequests(){
+        return this._numRequests
+    }
+
     get received(){
         return this._received
     }
@@ -55,6 +62,7 @@ export default class Client{
 
         this._socket.connect(this._port, this._host)
         this.sendDataRequest()
+        this._totalStartTime = process.hrtime()
     }
 
 
@@ -70,13 +78,28 @@ export default class Client{
             this._reqEndTime = process.hrtime(this._reqStartTime)
             const millis = this._getMillis(this._reqEndTime)
             Stats.recordDelay(millis)
-            if (Stats.numRequests >= 1000){
-                console.log(Stats.getStats())
+            if (Stats.numRequests >= this.numRequests){
+                this._totalEndTime = process.hrtime(this._totalStartTime)
+                this.printResults()
                 Stats.resetStats()
             } else {
                 this.sendDataRequest()
             }
         }
+    }
+
+    printResults(){
+        const totalSeconds = this._getSeconds(this._totalEndTime)
+        console.log({
+            numRequests: Stats.numRequests,
+            totalSeconds,
+            requestsPerSecond: Stats.numRequests / totalSeconds,
+            ...Stats.getStats(),
+        })
+    }
+
+    _getSeconds(hrtime){
+        return hrtime[0] + hrtime[1] / 1e9
     }
 
     _getMillis(hrtime){
@@ -93,4 +116,4 @@ export default class Client{
 
 }
 
-new Client({host: Config.serverIp, port: 6000, size: Config.smallName, gapUs: 0})
+new Client({host: Config.serverIp, port: 6000, size: Config.smallName, gapUs: 0, numRequests: 1000})
