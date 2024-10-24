@@ -11,6 +11,8 @@ export default class Stats{
     static recordDelay(delay){
         this.numRequests++
 
+        if (this.numRequests % 1000 === 0) console.log(this.numRequests)
+
         this.sum += delay
 
         if (delay < this.min) this.min = delay
