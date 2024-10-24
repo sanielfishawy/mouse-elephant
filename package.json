@@ -6,7 +6,7 @@
   "author": "Sani Elfishawy",
   "license": "MIT",
   "type": "module",
-  "dependencies": {
+  "devDependencies": {
     "@aws-sdk/client-ec2": "^3.677.0",
     "@aws-sdk/credential-provider-ini": "^3.677.0"
   }

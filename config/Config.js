@@ -1,4 +1,7 @@
 export default class Config{
+
+    // static serverIp = '127.0.0.1'
+    static serverIp = '10.0.1.62'
     static largeName = 'large'
     static smallName = 'small'
 

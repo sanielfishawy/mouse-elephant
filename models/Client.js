@@ -2,9 +2,10 @@ import net from 'net'
 import Config from '../config/Config.js'
 import Stats from './Stats.js'
 
-export default class Receiver{
+export default class Client{
 
-    constructor({port, size: sizeName, gapUs}){
+    constructor({host, port, size: sizeName, gapUs}){
+        this._host = host
         this._port = port
         this._sizeName = sizeName
         this._gapUs = gapUs
@@ -13,7 +14,11 @@ export default class Receiver{
         this._reqStartTime = null
         this._reqEndTime = null
         Stats.resetStats()
-        this._setupServer()
+        this._setupClient()
+    }
+
+    get host(){
+        return this._host
     }
 
     get port(){
@@ -40,22 +45,18 @@ export default class Receiver{
         return this._socket
     }
 
-    _setupServer(){
-        const server = net.createServer((socket) => {
-            console.log(`Server: client connected ${this.port}`)
+    _setupClient(){
+        this._socket = new net.Socket()
+        this._socket.setNoDelay(true)
 
-            this._socket = socket
-            this.sendDataRequest()
+        this._socket.on('data', this._handleData.bind(this))
+        this._socket.on('end', this._handleEnd.bind(this))
+        this._socket.on('error', this._handleError.bind(this))
 
-            this._socket.on('data', this._handleData.bind(this))
-            this._socket.on('end', this._handleEnd.bind(this))
-            socket.on('error', this._handleError.bind(this))
-        })
-
-        server.listen(this._port, () => {
-            console.log(`Server listening on port ${this._port}`)
-        })
+        this._socket.connect(this._port, this._host)
+        this.sendDataRequest()
     }
+
 
     sendDataRequest(){
         this.socket.write(this.sizeName, 'utf-8')
@@ -92,4 +93,4 @@ export default class Receiver{
 
 }
 
-new Receiver({port: 6000, size: Config.smallName, gapUs: 1000})
+new Client({host: Config.serverIp, port: 6000, size: Config.smallName, gapUs: 0})

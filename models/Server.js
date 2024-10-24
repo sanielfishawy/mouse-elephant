@@ -1,18 +1,13 @@
 import net from 'net'
 import Config from '../config/Config.js'
 
-export default class Sender{
+export default class Server{
 
-    constructor({host, port}){
-        this._host = host
+    constructor({port}){
         this._port = port
         this._socket = null
-        this._setupSocket()
+        this._setupServer()
     }
-
-    get host(){
-        return this._host
-    }   
 
     get port(){ 
         return this._port
@@ -22,15 +17,20 @@ export default class Sender{
         return this._socket
     }
 
-    _setupSocket(){
-        this._socket = new net.Socket()
-        this._socket.setNoDelay(true)
+    _setupServer(){
+        const server = net.createServer((socket) => {
+            console.log(`Server: client connected ${this.port}`)
 
-        this._socket.on('data', this._handleRequest.bind(this))
-        this._socket.on('error', this._handleError.bind(this))
-        this._socket.on('close', this._handleClose.bind(this))
-        
-        this._socket.connect(this._port, this._host)
+            this._socket = socket
+
+            this._socket.on('data', this._handleRequest.bind(this))
+            this._socket.on('error', this._handleError.bind(this))
+            this._socket.on('close', this._handleClose.bind(this))
+        })
+
+        server.listen(this._port, () => {
+            console.log(`Server listening on port ${this._port}`)
+        })
     }
 
     _handleRequest(data){
@@ -55,4 +55,4 @@ export default class Sender{
 
 }
 
-new Sender({host: '127.0.0.1', port: 6000})
+new Server({port: 6000})
