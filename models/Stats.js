@@ -3,7 +3,8 @@ export default class Stats{
     static l_2 = 0
     static b_2_5 = 0
     static b_5_10 = 0
-    static b_10_200 = 0
+    static b_10_20 = 0
+    static b_20_200 = 0
     static b_200_250 = 0
     static g_250 = 0
     static min = 100000
@@ -27,8 +28,10 @@ export default class Stats{
             this.b_2_5++
         else if (delay <= 10)
             this.b_5_10++
+        else if (delay <= 20)
+            this.b_10_20++
         else if (delay <= 200)
-            this.b_10_200++
+            this.b_20_200++
         else if (delay <= 250)
             this.b_200_250++
         else
