@@ -11,7 +11,7 @@ export default class Stats{
     static recordDelay(delay){
         this.numRequests++
 
-        sum += delay
+        this.sum += delay
 
         if (delay < this.min) this.min = delay
         if (delay > this.max) this.max = delay
