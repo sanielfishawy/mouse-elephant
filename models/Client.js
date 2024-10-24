@@ -116,4 +116,4 @@ export default class Client{
 
 }
 
-new Client({host: Config.serverIp, port: 6000, size: Config.smallName, gapUs: 0, numRequests: 10000})
+new Client({host: Config.serverIp, port: 6000, size: Config.smallName, gapUs: 0, numRequests: 100000})
