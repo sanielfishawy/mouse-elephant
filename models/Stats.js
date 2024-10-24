@@ -3,7 +3,8 @@ export default class Stats{
     static l_2 = 0
     static b_2_5 = 0
     static b_5_10 = 0
-    static b_10_20 = 0
+    static b_10_15 = 0
+    static b_15_20 = 0
     static b_20_200 = 0
     static b_200_250 = 0
     static g_250 = 0
@@ -28,8 +29,10 @@ export default class Stats{
             this.b_2_5++
         else if (delay <= 10)
             this.b_5_10++
+        else if (delay <= 15)
+            this.b_10_15++
         else if (delay <= 20)
-            this.b_10_20++
+            this.b_15_20++
         else if (delay <= 200)
             this.b_20_200++
         else if (delay <= 250)
@@ -64,7 +67,8 @@ export default class Stats{
             l_2: this.l_2,
             b_2_5: this.b_2_5,
             b_5_10: this.b_5_10,
-            b_10_20: this.b_10_20,
+            b_10_15: this.b_10_15,
+            b_15_20: this.b_15_20,
             b_20_200: this.b_20_200,
             b_200_250: this.b_200_250,
             g_250: this.g_250,
