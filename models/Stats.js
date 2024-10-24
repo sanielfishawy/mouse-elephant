@@ -2,7 +2,10 @@ export default class Stats{
     static numRequests = 0
     static l_2 = 0
     static b_2_5 = 0
-    static g_5 = 0
+    static b_5_10 = 0
+    static b_10_200 = 0
+    static b_200_250 = 0
+    static g_250 = 0
     static min = 100000
     static max = 0
     static sum = 0
@@ -22,8 +25,14 @@ export default class Stats{
             this.l_2++
         else if (delay <= 5)
             this.b_2_5++
+        else if (delay <= 10)
+            this.b_5_10++
+        else if (delay <= 200)
+            this.b_10_200++
+        else if (delay <= 250)
+            this.b_200_250++
         else
-            this.g_5++
+            this.g_250++
     }
 
     static printNumRequests(){
