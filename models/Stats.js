@@ -10,6 +10,7 @@ export default class Stats{
     static g_250 = 0
     static min = 100000
     static max = 0
+    static maxBelow200 = 0
     static sum = 0
 
 
@@ -22,6 +23,7 @@ export default class Stats{
 
         if (delay < this.min) this.min = delay
         if (delay > this.max) this.max = delay
+        if (delay < 200 && delay > this.maxBelow200) this.maxBelow200 = delay
 
         if (delay <= 2)
             this.l_2++
@@ -63,6 +65,7 @@ export default class Stats{
         return {
             min: this.min,
             max: this.max,
+            maxBelow200: this.maxBelow200,
             avg: this.avg,
             l_2: this.l_2,
             b_2_5: this.b_2_5,
