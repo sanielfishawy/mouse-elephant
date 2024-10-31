@@ -16,6 +16,9 @@ export default class RttStats{
 
         this.min_rtt_min = 100000
         this.min_rtt_max = 0
+
+        this.bytes_sent = 0
+        this.bytes_retrans = 0
     }
 
     recordRtts(rtts){
@@ -56,6 +59,9 @@ export default class RttStats{
             this.rtt_30_40++
         else
             this.rtt_gt_40++
+
+        this.bytes_sent += data.bytesSent
+        this.bytes_retrans += data.bytesRetrans
     }
 
     get rttAvg(){
@@ -77,7 +83,10 @@ export default class RttStats{
             rtt_max: this.rtt_max,
             rtt_avg: this.rttAvg,
             min_rtt_min: this.min_rtt_min,
-            min_rtt_max: this.min_rtt_max
+            min_rtt_max: this.min_rtt_max,
+            bytes_sent: this.bytes_sent,
+            bytes_retrans: this.bytes_retrans,
+            retrans_rate: this.bytes_retrans / this.bytes_sent
         }
     }
 

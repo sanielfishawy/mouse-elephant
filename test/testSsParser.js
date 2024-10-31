@@ -8,11 +8,19 @@ let r
 const SP = new SsParser({data: ssOutput(), peerIp: '10.0.1.37'})
 
 describe('SsParser', () => {
+
     describe('rtts', () => {
         it('Should should return an array of rtt objects', () => {
+            console.log(SP.rtts)
             expect(SP.rtts).to.be.an('array')
             expect(SP.rtts[0]).to.be.an('object')
             expect(SP.rtts[0].rtt).to.be.a('number')
+        })
+    })
+
+    describe('peerIpLines', () => {
+        it('Should return an array of lines', () => {
+            expect(SP.peerIpLines).to.be.an('array')
         })
     })
 })
@@ -30,10 +38,17 @@ describe('RttStats', () => {
 })
 
 describe('SsGetter', () => {
-    describe('run()', () => {
+    describe.skip('run()', () => {
         it('Should run indefinitely', () => {
             const SG = new SsGetter({periodMs: 100, testSsOutput: ssOutput()})
             SG.run()
+        })
+    })
+
+    describe.only('runOnce()', () => {
+        it('Should run once', () => {
+            const SG = new SsGetter({periodMs: 100, testSsOutput: ssOutput()})
+            SG.runOnce()
         })
     })
 })

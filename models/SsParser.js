@@ -43,22 +43,28 @@ export default class SsParser {
     }
 
     getRtt(line){
-        const regex = /rtt:(\d+(?:\.\d+)?)[/](\d+(?:\.\d+)?).*minrtt:(\d+(?:\.\d+)?)/;
+        // const regex = /rtt:(?<rtt>\d+\.?\d*)\/(?<rttVariance>\d+\.?\d*) .* bytes_sent:(?<bytesSent>\d+) bytes_retrans:(?<bytesRetrans>\d+) .* minrtt:(?<minRtt>\d+\.?\d*)/
+    
+        const regex = /rtt:(?<rtt>\d+\.?\d*)\/(?<rttVariance>\d+\.?\d*) .* bytes_sent:(?<bytesSent>\d+)(?: bytes_retrans:(?<bytesRetrans>\d+))? .* minrtt:(?<minRtt>\d+\.?\d*)/
 
         const match = line.match(regex);
+
+        if (!match) console.log(line)
 
         const r = {}
 
         if (match) {
-            r.rtt = parseFloat(match[1]);
-            r.rttVar = parseFloat(match[2]);
-            r.minRtt = parseFloat(match[3]);
+            r.rtt = parseFloat(match.groups.rtt)
+            r.rttVar = parseFloat(match.groups.rttVariance)
+            r.minRtt = parseFloat(match.groups.minRtt)
+            r.bytesSent = parseInt(match.groups.bytesSent)
+            r.bytesRetrans = parseInt(match.groups.bytesRetrans || 0)
         }
 
-        if (!r.rtt || !r.rttVar || !r.minRtt) {
-            console.log(line);
-            console.log(this.lines)
-        }
+        // if (!r.rtt || !r.rttVar || !r.minRtt || !r.bytesSent || !r.bytesRetrans){
+        //     console.log(line);
+        //     console.log(this.lines)
+        // }
 
         return r
     }

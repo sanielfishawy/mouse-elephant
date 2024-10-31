@@ -34,4 +34,8 @@ export default class SsGetter {
         }, this.getPeriodMs())
     }
 
+    runOnce(){
+        this.getAndRecord()
+        this._rttStats.printStats()
+    }
 }
