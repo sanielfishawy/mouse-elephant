@@ -30,7 +30,7 @@ export default class RttStats{
 
         this.numEntries++
         if(this.numEntries % 100 === 0) this.printNumEntries()
-        if(this.numEntries % 10000 === 0) this.printStats()
+        if(this.numEntries % 1000 === 0) this.printStats()
 
         this.rtt_sum += rtt
 
