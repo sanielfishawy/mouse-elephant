@@ -58,7 +58,8 @@ export default class RttStats{
             this.rtt_gt_40++
     }
 
-    rttAvg(){
+    get rttAvg(){
+        console.log({rtt_sum: this.rtt_sum, numEntries: this.numEntries})
         return this.rtt_sum / this.numEntries
     }
 
@@ -75,7 +76,7 @@ export default class RttStats{
             rtt_gt_40: this.rtt_gt_40,
             rtt_min: this.rtt_min,
             rtt_max: this.rtt_max,
-            rtt_avg: this.rttAvg(),
+            rtt_avg: this.rttAvg,
             min_rtt_min: this.min_rtt_min,
             min_rtt_max: this.min_rtt_max
         }
