@@ -54,6 +54,10 @@ export default class SsParser {
             r.minRtt = parseFloat(match[3]);
         }
 
+        if (!r.rtt || !r.rttVar || !r.minRtt) {
+            console.error(line);
+        }
+
         return r
     }
 
