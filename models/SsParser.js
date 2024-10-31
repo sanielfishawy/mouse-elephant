@@ -54,9 +54,9 @@ export default class SsParser {
             r.minRtt = parseFloat(match[3]);
         }
 
-        if (!r.rtt || !r.rttVar || !r.minRtt) {
+        if (true || !r.rtt || !r.rttVar || !r.minRtt) {
             console.error(line);
-            console.error(this.lines)
+            console.log(this.lines)
         }
 
         return r
@@ -64,7 +64,7 @@ export default class SsParser {
 
     get rtts(){
         if(!this._rtts){
-            this._rtts = this.peerIpLines.map(this.getRtt)
+            this._rtts = this.peerIpLines.map(() => this.getRtt)
         }
         return this._rtts
     }
