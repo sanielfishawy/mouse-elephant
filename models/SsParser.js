@@ -43,7 +43,9 @@ export default class SsParser {
     }
 
     getRtt(line){
-        const regex = /rtt:(\d+\.\d+)\/(\d+\.\d+).*minrtt:(\d+\.\d+)/;
+        // const regex = /rtt:(\d+\.\d+)\/(\d+\.\d+).*minrtt:(\d+\.\d+)/;
+        const regex = /rtt:(\d+(?:\.\d+)?)[/](\d+(?:\.\d+)?).*minrtt:(\d+(?:\.\d+)?)/;
+
         const match = line.match(regex);
 
         const r = {}
