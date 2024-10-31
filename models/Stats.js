@@ -18,6 +18,7 @@ export default class Stats{
         this.numRequests++
 
         if (this.numRequests % 1000 === 0) this.printNumRequests()
+        if (this.numRequests % 100000 === 0) this.printStats()
 
         this.sum += delay
 
@@ -47,6 +48,12 @@ export default class Stats{
         process.stdout.clearLine()
         process.stdout.cursorTo(0)
         process.stdout.write(this.numRequests.toString())
+    }
+
+    static printStats(){
+        console.log()
+        console.log(this.stats)
+        console.log()
     }
 
     static get numRequests(){

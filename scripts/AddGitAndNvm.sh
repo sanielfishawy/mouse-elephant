@@ -11,6 +11,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
 
+nvm install 14
+nvm use 14
+
 echo "Git and NVM have been installed successfully."
 
 sudo sh -c 'echo 1 > /proc/sys/net/ipv4/tcp_low_latency'
