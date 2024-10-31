@@ -16,7 +16,6 @@ export default class Client{
         this._reqStartTime = null
         this._reqEndTime = null
         this._totalStartTime = null
-        Stats.resetStats()
         this._setupClient()
     }
 
@@ -81,7 +80,6 @@ export default class Client{
             if (Stats.numRequests >= this.numRequests){
                 this._totalEndTime = process.hrtime(this._totalStartTime)
                 this.printResults()
-                Stats.resetStats()
             } else {
                 this.sendDataRequest()
             }
@@ -115,5 +113,3 @@ export default class Client{
     }   
 
 }
-
-new Client({host: Config.serverIp, port: 6000, size: Config.smallName, gapUs: 0, numRequests: 100000})

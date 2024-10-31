@@ -1,5 +1,6 @@
 #! /bin/sh
 
+unset PREFIX
 source ~/.nvm/nvm.sh
 nvm use 22
 echo node version $(node --version)

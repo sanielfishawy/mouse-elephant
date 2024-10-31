@@ -1,5 +1,5 @@
 {
-  "name": "MouseElephantTest",
+  "name": "mouse-elephant-test",
   "version": "1.0.0",
   "description": "Given a 10Gbps node that has several incoming sockets attempting to recieve data at the full line rate and one socket that is attempting recieve data at a very low rate what is the retransmit rate for the low rate socket?",
   "main": "index.js",
@@ -8,6 +8,15 @@
   "type": "module",
   "devDependencies": {
     "@aws-sdk/client-ec2": "^3.677.0",
-    "@aws-sdk/credential-provider-ini": "^3.677.0"
+    "@aws-sdk/credential-provider-ini": "^3.677.0",
+    "chai": "^5.1.2",
+    "mocha": "^10.8.2"
+  },
+  "dependencies": {},
+  "scripts": {
+    "test": "nodemon",
+    "run:server": "node ./run/runServer.js",
+    "run:client": "node ./run/runClient.js"
+
   }
 }

@@ -22,6 +22,7 @@ export default class Server{
             console.log(`Server: client connected ${this.port}`)
 
             this._socket = socket
+            socket.setNoDelay(true)
 
             this._socket.on('data', this._handleRequest.bind(this))
             this._socket.on('error', this._handleError.bind(this))
@@ -47,12 +48,12 @@ export default class Server{
     }
 
     _sendData(reqSize){
-        if (reqSize === Config.smallName)
+        if (reqSize === Config.oneByteName)
+            this.socket.write(Config.oneByteBuffer)
+        else if (reqSize === Config.smallName)
             this._socket.write(Config.smallBuffer)
         else 
             this._socket.write(Config.largeBuffer)
     }
 
 }
-
-new Server({port: 6000})

@@ -77,12 +77,4 @@ export default class Stats{
             g_250: this.g_250,
         }
     }
-
-    static resetStats(){
-        this.f_0_2 = 0
-        this.b_2_5 = 0
-        this.g_5 = 0
-    }
-    
-
 }
