@@ -59,7 +59,6 @@ export default class RttStats{
     }
 
     get rttAvg(){
-        console.log({rtt_sum: this.rtt_sum, numEntries: this.numEntries})
         return this.rtt_sum / this.numEntries
     }
 
