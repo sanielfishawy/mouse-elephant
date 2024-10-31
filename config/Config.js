@@ -1,12 +1,12 @@
 import os from 'os'
 export default class Config{
 
-    static linuxServerIp = '10.0.1.62'
+    static linuxServerIp = '10.0.1.57'
 
     static get serverIp(){
         return this.isMac ? '127.0.0.1' : this.linuxServerIp
     } 
-    static clientIp = '10.0.1.37'
+    static clientIp = '10.0.1.55'
     static largeName = 'large'
     static smallName = 'small'
     static oneByteName = 'b'

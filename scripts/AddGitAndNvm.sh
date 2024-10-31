@@ -2,6 +2,7 @@
 
 sudo yum update -y
 sudo yum install git -y
+sudo yum install iperf3 -y
 
 # Install NVM (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -19,8 +20,3 @@ echo "Git and NVM have been installed successfully."
 sudo sh -c 'echo 1 > /proc/sys/net/ipv4/tcp_low_latency'
 
 git clone https://github.com/sanielfishawy/mouse-elephant.git
-
-cd mouse-elephant
-
-npm install
-
