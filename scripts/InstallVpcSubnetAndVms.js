@@ -15,7 +15,7 @@ const region = 'us-west-1'
 const AvailabilityZone = 'us-west-1a'
 const vpcName = 'vpc-elephant-mouse'
 const subnetName = 'subnet-elephant-mouse'
-const placementGroupName = 'placement-group-spread-elephant-mouse'
+const placementGroupName = 'placement-group-spread-elephant-mouse-2'
 const InstanceType = 'c5a.8xlarge'
 const ImageId = 'ami-0175bdd48fdb0973b'
 const KeyName = 'se'
@@ -147,8 +147,8 @@ async function launchInstances(subnetId) {
         ImageId,
         InstanceType,
         KeyName,
-        MaxCount: 4,
-        MinCount: 4,
+        MaxCount: 5,
+        MinCount: 5,
         Placement: {
             GroupName: placementGroupName,
         },
