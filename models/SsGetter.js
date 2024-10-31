@@ -2,6 +2,7 @@ import { execSync } from 'child_process'
 import RttStats from './RttStats.js'
 import ssParser from './SsParser.js'
 import Config from '../config/Config.js'
+import { ssOutput } from '../test/seed.js'
 
 export default class SsGetter {
     
@@ -17,6 +18,7 @@ export default class SsGetter {
 
     getSsOutput(){
         if (this._testSsOutput) return this._testSsOutput
+        if (Config.isMac) return ssOutput()
         return execSync('ss -tin', { encoding: 'utf-8' })
     }
 
@@ -26,7 +28,7 @@ export default class SsGetter {
         this._rttStats.recordRtts(rtts)
     }
 
-    run(){
+    async run(){
         setInterval(() => {
             this.getAndRecord()
         }, this.getPeriodMs())

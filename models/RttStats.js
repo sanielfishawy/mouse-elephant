@@ -29,7 +29,8 @@ export default class RttStats{
         const minRtt = data.minRtt
 
         this.numEntries++
-        if(this.numEntries % 100 === 0) console.log(this.stats)
+        if(this.numEntries % 100 === 0) this.printNumEntries()
+        if(this.numEntries % 10000 === 0) this.printStats()
 
         this.rtt_sum += rtt
 
@@ -78,5 +79,17 @@ export default class RttStats{
             min_rtt_min: this.min_rtt_min,
             min_rtt_max: this.min_rtt_max
         }
+    }
+
+    printStats(){
+        console.log()
+        console.log(this.stats)
+        console.log()
+    }
+
+    printNumEntries(){
+        process.stdout.clearLine()
+        process.stdout.cursorTo(0)
+        process.stdout.write(this.numEntries.toString())
     }
 }

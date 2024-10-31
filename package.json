@@ -16,7 +16,8 @@
   "scripts": {
     "test": "nodemon",
     "run:server": "node ./run/runServer.js",
-    "run:client": "node ./run/runClient.js"
+    "run:client": "node ./run/runClient.js",
+    "run:ss": "node ./run/runGetSs.js"
 
   }
 }
