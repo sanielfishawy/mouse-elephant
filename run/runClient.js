@@ -1,5 +1,5 @@
 import Client from '../models/Client.js'
 import Config from '../config/Config.js'
 
-serverIp = process.argv[2] || Config.serverIp
+const serverIp = process.argv[2] || Config.serverIp
 new Client({host: serverIp, port: 6000, size: Config.smallName, gapUs: 0, numRequests: 300000})
