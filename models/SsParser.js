@@ -56,6 +56,7 @@ export default class SsParser {
 
         if (!r.rtt || !r.rttVar || !r.minRtt) {
             console.error(line);
+            console.error(this.lines)
         }
 
         return r
