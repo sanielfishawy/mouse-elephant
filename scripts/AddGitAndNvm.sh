@@ -20,3 +20,5 @@ echo "Git and NVM have been installed successfully."
 sudo sh -c 'echo 1 > /proc/sys/net/ipv4/tcp_low_latency'
 
 git clone https://github.com/sanielfishawy/mouse-elephant.git
+
+echo "set -o vi" >> ~/.bashrc

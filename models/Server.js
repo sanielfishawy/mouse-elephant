@@ -48,9 +48,11 @@ export default class Server{
     }
 
     _sendData(reqSize){
-        if (reqSize === Config.oneByteName)
-            this.socket.write(Config.oneByteBuffer)
-        else if (reqSize === Config.smallName)
+        console.log(reqSize)
+        if (reqSize === Config.oneByteName){
+            this.socket.write(Config.smallBuffer)
+            console.log('Sending one byte')
+        } else if (reqSize === Config.smallName)
             this._socket.write(Config.smallBuffer)
         else 
             this._socket.write(Config.largeBuffer)
