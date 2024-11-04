@@ -94,6 +94,7 @@ export default class Client{
             requestsPerSecond: Stats.numRequests / totalSeconds,
             ...Stats.stats,
         })
+        // Stats.printHist()
     }
 
     _getSeconds(hrtime){

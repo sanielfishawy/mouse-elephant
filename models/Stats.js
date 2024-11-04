@@ -12,10 +12,13 @@ export default class Stats{
     static max = 0
     static maxBelow200 = 0
     static sum = 0
-
+    static hist = []
+    static histStepMs = 0.05
 
     static recordDelay(delay){
         this.numRequests++
+
+        // this.recordHistDelay(delay)
 
         if (this.numRequests % 1000 === 0) this.printNumRequests()
         if (this.numRequests % 100000 === 0) this.printStats()
@@ -44,6 +47,18 @@ export default class Stats{
             this.g_250++
     }
 
+    static recordHistDelay(delay){
+        let i = 0
+        while(1){
+            if (!this.hist[i]) this.hist[i] = 0
+            if (delay <= i * this.histStepMs){
+                this.hist[i]++
+                return
+            }
+            i++
+        }
+    }
+
     static printNumRequests(){
         process.stdout.clearLine()
         process.stdout.cursorTo(0)
@@ -53,6 +68,14 @@ export default class Stats{
     static printStats(){
         console.log()
         console.log(this.stats)
+        console.log()
+    }
+
+    static printHist(){
+        console.log()
+        this.hist.forEach((count) => {
+            console.log(count)
+        })
         console.log()
     }
 
@@ -82,6 +105,7 @@ export default class Stats{
             b_20_200: this.b_20_200,
             b_200_250: this.b_200_250,
             g_250: this.g_250,
+            hist: this.hist,
         }
     }
 }

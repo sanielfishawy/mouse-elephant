@@ -1,0 +1,96 @@
+Mouse with no elephant 10KB
+===========================
+  numRequests: 10000000,
+  totalSeconds: 4062.900855177,
+  requestsPerSecond: 2461.2956004717353,
+  min: 0.02059,
+  max: 219.021126,
+  maxBelow200: 18.751885,
+  avg: 0.39902374460989276,
+  l_2: 9866481,
+  b_2_5: 132827,
+  b_5_10: 606,
+  b_10_15: 55,
+  b_15_20: 1,
+  b_20_200: 0,
+  b_200_250: 30,
+  g_250: 0
+
+Bytes_sent 102,404,458,683
+
+	 cubic wscale:7,7 rto:204 rtt:0.836/0.822 ato:40 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:3 ssthresh:2 bytes_sent:102404458683 bytes_retrans:4458683 bytes_acked:102400000000 bytes_received:50000000 segs_out:20001076 segs_in:20000444 data_segs_out:20001075 data_segs_in:10000000 send 256909091bps lastsnd:174972 lastrcv:174972 lastack:174968 pacing_rate 307968568bps delivery_rate 2045485712bps delivered:20000040 app_limited busy:3638916ms retrans:0/1075 dsack_dups:39 rcv_rtt:4028.74 rcv_space:66710 rcv_ssthresh:56575 minrtt:0.073
+
+
+Mouse with elephant 10KB
+========================
+  numRequests: 10000000,
+  totalSeconds: 4851.825662547,
+  requestsPerSecond: 2061.079827577817,
+  min: 0.01892,
+  max: 258.849343,
+  maxBelow200: 18.158558,
+  avg: 0.47660011830377297,
+  l_2: 9549672,
+  b_2_5: 448976,
+  b_5_10: 1116,
+  b_10_15: 151,
+  b_15_20: 4,
+  b_20_200: 0,
+  b_200_250: 78,
+  g_250: 3
+
+	 cubic wscale:7,7 rto:204 rtt:0.197/0.038 ato:40 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:3 ssthresh:2 bytes_sent:102408008177 bytes_retrans:8008177 bytes_acked:102400000000 bytes_received:50000000 segs_out:20002038 segs_in:20000984 data_segs_out:20002033 data_segs_in:10000002 send 1090233503bps lastsnd:409164 lastrcv:409164 lastack:409164 pacing_rate 1308280200bps delivery_rate 1313614672bps delivered:20000301 app_limited busy:4389336ms retrans:0/2033 dsack_dups:300 rcv_rtt:4517.37 rcv_space:65130 rcv_ssthresh:56575 minrtt:0.112
+
+
+Elephant With Mouse 10KB
+========================
+	 cubic wscale:7,7 rto:204 rtt:2.018/0.724 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:32 ssthresh:31 bytes_sent:221925659551 bytes_retrans:231643936 bytes_acked:221693792389 segs_out:25221461 segs_in:1755947 data_segs_out:25221459 send 1135254708bps lastrcv:5556700 pacing_rate 1362052536bps delivery_rate 1041502840bps delivered:25198475 busy:5556644ms rwnd_limited:4982920ms(89.7%) unacked:25 retrans:0/27335 dsack_dups:4376 reord_seen:1 rcv_space:56587 rcv_ssthresh:56587 notsent:3095901 minrtt:0.14
+
+
+	 cubic wscale:7,7 rto:208 rtt:4.069/0.538 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:38 ssthresh:16 bytes_sent:334078053539 bytes_retrans:394128966 bytes_acked:333683718938 segs_out:37879285 segs_in:2861923 data_segs_out:37879283 send 668590809bps lastrcv:8281372 pacing_rate 802235032bps delivery_rate 623080936bps delivered:37835496 busy:8281340ms rwnd_limited:6971196ms(84.2%) sndbuf_limited:420ms(0.0%) unacked:23 retrans:0/44898 dsack_dups:1134 reordering:19 reord_seen:5 rcv_space:56587 rcv_ssthresh:56587 notsent:3842974 minrtt:0.111
+
+
+Mouse with no elephant 1 byte
+=============================
+  numRequests: 10000000,
+  totalSeconds: 4298.655558058,
+  requestsPerSecond: 2326.3087411724823,
+  min: 0.01163,
+  max: 416.477084,
+  maxBelow200: 8.42782,
+  avg: 0.4211870217674957,
+  l_2: 9707350,
+  b_2_5: 291252,
+  b_5_10: 935,
+  b_10_15: 0,
+  b_15_20: 0,
+  b_20_200: 0,
+  b_200_250: 462,
+  g_250: 1
+
+	 cubic wscale:7,7 rto:208 rtt:5.759/10.699 ato:40 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:2 ssthresh:2 bytes_sent:10000464 bytes_retrans:464 bytes_acked:10000000 bytes_received:50000000 segs_out:10001175 segs_in:10000359 data_segs_out:10000464 data_segs_in:10000355 send 24862650bps lastsnd:752504 lastrcv:752504 lastack:752464 pacing_rate 29834528bps delivery_rate 1350792448bps delivered:10000001 app_limited busy:4137648ms retrans:0/464 rcv_rtt:4321.68 rcv_space:65550 rcv_ssthresh:56575 minrtt:0.064
+
+Mouse with elephant 1 byte
+==========================
+  numRequests: 10000000,
+  totalSeconds: 4503.825072285,
+  requestsPerSecond: 2220.3349018896365,
+  min: 0.01164,
+  max: 212.761888,
+  maxBelow200: 9.323124,
+  avg: 0.443452023125228,
+  l_2: 9568996,
+  b_2_5: 428572,
+  b_5_10: 1788,
+  b_10_15: 0,
+  b_15_20: 0,
+  b_20_200: 0,
+  b_200_250: 644,
+  g_250: 0
+
+	 cubic wscale:7,7 rto:208 rtt:5.211/10.19 ato:40 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:2 ssthresh:2 bytes_sent:10000644 bytes_retrans:644 bytes_acked:10000000 bytes_received:50000000 segs_out:10001397 segs_in:10000380 data_segs_out:10000644 data_segs_in:10000376 send 27477260bps lastsnd:556508 lastrcv:556508 lastack:556468 pacing_rate 32971128bps delivery_rate 873073168bps delivered:10000001 app_limited busy:4312656ms retrans:0/644 rcv_rtt:3555.68 rcv_space:70790 rcv_ssthresh:56575 minrtt:0.082
+
+
+Elephant With Mouse 1 byte
+==========================
+	 cubic wscale:7,7 rto:224 rtt:21.084/1.941 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:42 ssthresh:41 bytes_sent:159052380857 bytes_retrans:66339438 bytes_acked:158985665562 segs_out:17774234 segs_in:4339105 data_segs_out:17774232 send 142613546bps lastrcv:4228684 pacing_rate 171133208bps delivery_rate 129890784bps delivered:17766774 busy:4228680ms rwnd_limited:590340ms(14.0%) unacked:42 retrans:0/7417 rcv_space:56587 rcv_ssthresh:56587 notsent:2986983 minrtt:4

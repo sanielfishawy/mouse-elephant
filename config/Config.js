@@ -10,7 +10,7 @@ export default class Config{
     static largeName = 'large'
     static smallName = 'small'
 
-    static largeBytes = 1024 * 1024 * 25
+    static largeBytes = 1024 * 10
     static smallBytes = 1
 
     static largeBuffer = Buffer.alloc(this.largeBytes, 'a')
