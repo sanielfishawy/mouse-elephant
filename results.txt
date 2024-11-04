@@ -94,3 +94,69 @@ Mouse with elephant 1 byte
 Elephant With Mouse 1 byte
 ==========================
 	 cubic wscale:7,7 rto:224 rtt:21.084/1.941 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:42 ssthresh:41 bytes_sent:159052380857 bytes_retrans:66339438 bytes_acked:158985665562 segs_out:17774234 segs_in:4339105 data_segs_out:17774232 send 142613546bps lastrcv:4228684 pacing_rate 171133208bps delivery_rate 129890784bps delivered:17766774 busy:4228680ms rwnd_limited:590340ms(14.0%) unacked:42 retrans:0/7417 rcv_space:56587 rcv_ssthresh:56587 notsent:2986983 minrtt:4
+
+
+
+===========
+C5a.4xlarge
+===========
+
+Mouse with Elephant 1byte
+-------------------------
+  numRequests: 10000000,
+  totalSeconds: 3796.721779852,
+  requestsPerSecond: 2633.8511431274296,
+  min: 0.018592,
+  max: 416.483659,
+  maxBelow200: 19.749909,
+  avg: 0.3693763027991815,
+  l_2: 9666016,
+  b_2_5: 312691,
+  b_5_10: 20615,
+  b_10_15: 65,
+  b_15_20: 4,
+  b_20_200: 0,
+  b_200_250: 608,
+  g_250: 1
+
+	 cubic wscale:7,7 rto:208 rtt:5.278/10.339 ato:40 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:2 ssthresh:2 bytes_sent:10000610 bytes_retrans:610 bytes_acked:10000000 bytes_received:50000000 segs_out:10001295 segs_in:10000346 data_segs_out:10000610 data_segs_in:10000342 send 27128458bps lastsnd:260428 lastrcv:260428 lastack:260384 pacing_rate 32550288bps delivery_rate 873073168bps delivered:10000001 app_limited busy:3583284ms retrans:0/610 rcv_rtt:3471.11 rcv_space:65545 rcv_ssthresh:56575 minrtt:0.082
+
+
+Mouse without elephant 1 byte
+-----------------------------
+  numRequests: 10000000,
+  totalSeconds: 2520.694984526,
+  requestsPerSecond: 3967.1598751089805,
+  min: 0.00658,
+  max: 211.299163,
+  maxBelow200: 6.570694,
+  avg: 0.24296023633535382,
+  l_2: 9829572,
+  b_2_5: 169927,
+  b_5_10: 64,
+  b_10_15: 0,
+  b_15_20: 0,
+  b_20_200: 0,
+  b_200_250: 437,
+  g_250: 0
+
+	 cubic wscale:7,7 rto:208 rtt:5.43/10.641 ato:40 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:2 ssthresh:2 bytes_sent:10000437 bytes_retrans:437 bytes_acked:10000000 bytes_received:50000000 segs_out:10000842 segs_in:10000206 data_segs_out:10000437 data_segs_in:10000202 send 26369061bps lastsnd:354652 lastrcv:354652 lastack:354608 pacing_rate 31639952bps delivery_rate 1325777776bps delivered:10000001 app_limited busy:2362336ms retrans:0/437 rcv_rtt:2193.3 rcv_space:71060 rcv_ssthresh:56575 minrtt:0.054
+
+
+Elephant
+--------
+	 cubic wscale:7,7 rto:216 rtt:14.386/3.881 mss:8949 pmtu:9001 rcvmss:536 advmss:8949 cwnd:47 ssthresh:29 bytes_sent:122939546340 bytes_retrans:79297962 bytes_acked:122859886836 segs_out:13848876 segs_in:1427091 data_segs_out:13848874 send 233895732bps lastrcv:3171356 pacing_rate 280667560bps delivery_rate 149301072bps delivered:13840050 busy:3171320ms rwnd_limited:2055032ms(64.8%) unacked:41 retrans:0/8956 dsack_dups:172 rcv_space:56587 rcv_ssthresh:56587 notsent:3503563 minrtt:0.147
+
+
+===========
+C5a.4xlarge
+===========
+
+Mouse with Elephant 1byte
+-------------------------
+
+Mouse without elephant 1 byte
+-----------------------------
+
+Elephant
+--------
